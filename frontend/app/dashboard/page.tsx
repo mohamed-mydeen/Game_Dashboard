@@ -241,13 +241,13 @@ export default function Dashboard() {
   
   const router = useRouter();
 
-  // Check authentication on mount
+  
   useEffect(() => {
     const token = localStorage.getItem("authToken");
     const email = localStorage.getItem("userEmail");
     
     if (!token) {
-      // Redirect to login if not authenticated
+  
       router.push("/");
       return;
     }
@@ -266,11 +266,11 @@ export default function Dashboard() {
     }
   };
 
-  // Handle image upload
+
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
-      // Convert image to base64
+
       const reader = new FileReader();
       reader.onloadend = () => {
         setSelectedImage(reader.result as string);
@@ -279,12 +279,12 @@ export default function Dashboard() {
     }
   };
 
-  // Remove selected image
+
   const removeImage = () => {
     setSelectedImage(null);
   };
 
-  // Add or update game with image
+
   const addOrUpdateGame = async () => {
     if (!name.trim()) return;
     
@@ -333,7 +333,7 @@ export default function Dashboard() {
     }
   };
 
-  // Logout function
+  
   const handleLogout = () => {
     localStorage.removeItem("authToken");
     localStorage.removeItem("userEmail");
@@ -503,4 +503,5 @@ export default function Dashboard() {
       </div>
     </div>
   );
+
 }
