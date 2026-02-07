@@ -2,6 +2,8 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
+const API_URL = process.env.NEXT_PUBLIC_API_URL!;
+
 const styles = {
   wrapper: {
     minHeight: "100vh",
@@ -84,20 +86,6 @@ const styles = {
     fontSize: "14px",
     fontWeight: "500",
     border: "2px solid #fecaca"
-  },
-  demoInfo: {
-    marginTop: "20px",
-    padding: "16px",
-    backgroundColor: "#f3f4f6",
-    borderRadius: "12px",
-    fontSize: "13px",
-    color: "#4b5563",
-    textAlign: "center" as const
-  },
-  demoCredentials: {
-    fontWeight: "700",
-    color: "#1f2937",
-    marginTop: "8px"
   }
 };
 
@@ -114,7 +102,7 @@ export default function LoginPage() {
     setLoading(true);
 
     try {
-      const response = await fetch("http://localhost:5000/login", {
+      const response = await fetch(`${API_URL}/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password })
@@ -123,17 +111,14 @@ export default function LoginPage() {
       const data = await response.json();
 
       if (data.success) {
-        // Store token in localStorage
         localStorage.setItem("authToken", data.token);
         localStorage.setItem("userEmail", email);
-        
-        // Redirect to dashboard
         router.push("/dashboard");
       } else {
         setError(data.message || "Login failed");
       }
     } catch (err) {
-      setError("Cannot connect to server. Make sure backend is running.");
+      setError("Cannot connect to server.");
     } finally {
       setLoading(false);
     }
@@ -156,7 +141,7 @@ export default function LoginPage() {
               style={styles.input}
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="Enter your email"
+              placeholder="admin@gmail.com"
               required
             />
           </div>
@@ -168,7 +153,7 @@ export default function LoginPage() {
               style={styles.input}
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              placeholder="Enter your password"
+              placeholder="123456"
               required
             />
           </div>
@@ -187,8 +172,6 @@ export default function LoginPage() {
             {loading ? "Logging in..." : "Login"}
           </button>
         </form>
-
-        
       </div>
     </div>
   );
