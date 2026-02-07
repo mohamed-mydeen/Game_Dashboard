@@ -20,105 +20,72 @@ const styles = {
     justifyContent: "space-between",
     alignItems: "center",
     marginBottom: "40px",
-    flexWrap: "wrap" as const,
     gap: "16px"
   },
-  header: {
-    textAlign: "left" as const,
-    flex: "1"
-  },
+  header: { flex: 1 },
   title: {
     fontSize: "42px",
     fontWeight: "800",
-    color: "#ffffff",
-    marginBottom: "8px",
-    letterSpacing: "-0.5px"
+    color: "#fff"
   },
   subtitle: {
     fontSize: "16px",
-    color: "rgba(255, 255, 255, 0.8)",
-    fontWeight: "400"
+    color: "rgba(255,255,255,0.8)"
   },
   logoutButton: {
     padding: "12px 24px",
-    backgroundColor: "#ffffff",
-    color: "#667eea",
-    border: "none",
     borderRadius: "12px",
+    border: "none",
     cursor: "pointer",
-    fontWeight: "700",
-    fontSize: "14px",
-    transition: "all 0.2s",
-    boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)"
+    fontWeight: "700"
   },
   inputSection: {
-    backgroundColor: "#ffffff",
+    backgroundColor: "#fff",
     padding: "24px",
     borderRadius: "16px",
-    boxShadow: "0 10px 40px rgba(0, 0, 0, 0.15)",
     marginBottom: "30px"
   },
   inputWrapper: {
     display: "flex",
     gap: "12px",
-    alignItems: "stretch",
     marginBottom: "16px"
   },
   input: {
-    flex: "1",
-    padding: "14px 18px",
+    flex: 1,
+    padding: "14px",
     borderRadius: "12px",
-    border: "2px solid #e5e7eb",
-    fontSize: "15px",
-    outline: "none",
-    transition: "all 0.2s",
-    fontWeight: "500",
-    color: "#020918"
-  },
-  imageUploadWrapper: {
-    display: "flex",
-    gap: "12px",
-    alignItems: "center",
-    marginTop: "12px"
-  },
-  fileInput: {
-    flex: "1",
-    padding: "10px 14px",
-    borderRadius: "10px",
-    border: "2px dashed #cbd5e1",
-    fontSize: "14px",
-    cursor: "pointer",
-    backgroundColor: "#f8fafc"
-  },
-  imagePreview: {
-    width: "60px",
-    height: "60px",
-    borderRadius: "10px",
-    objectFit: "cover" as const,
     border: "2px solid #e5e7eb"
-  },
-  removeImageButton: {
-    padding: "8px 16px",
-    backgroundColor: "#ef4444",
-    color: "#fff",
-    border: "none",
-    borderRadius: "8px",
-    cursor: "pointer",
-    fontSize: "12px",
-    fontWeight: "600"
   },
   addButton: {
     padding: "14px 28px",
     borderRadius: "12px",
     border: "none",
     cursor: "pointer",
-    background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+    background: "#667eea",
     color: "#fff",
-    fontWeight: "600",
-    fontSize: "15px",
-    transition: "all 0.2s",
-    boxShadow: "0 4px 12px rgba(102, 126, 234, 0.4)",
-    whiteSpace: "nowrap" as const
+    fontWeight: "600"
+  },
+  imageUploadWrapper: {
+    display: "flex",
+    gap: "12px",
+    alignItems: "center"
+  },
+  fileInput: {
+    flex: 1
+  },
+  imagePreview: {
+    width: "60px",
+    height: "60px",
+    borderRadius: "10px",
+    objectFit: "cover" as const
+  },
+  removeImageButton: {
+    padding: "6px 12px",
+    backgroundColor: "#ef4444",
+    color: "#fff",
+    border: "none",
+    borderRadius: "8px",
+    cursor: "pointer"
   },
   gamesGrid: {
     display: "grid",
@@ -126,72 +93,54 @@ const styles = {
     gap: "20px"
   },
   gameCard: {
-    backgroundColor: "#ffffff",
+    backgroundColor: "#fff",
     padding: "24px",
-    borderRadius: "16px",
-    boxShadow: "0 4px 20px rgba(0, 0, 0, 0.1)",
-    transition: "all 0.3s ease",
-    position: "relative" as const,
-    overflow: "hidden",
-    border: "4px solid #020918",
-  },
-  gameCardInner: {
-    position: "relative" as const,
-    zIndex: 1
+    borderRadius: "16px"
   },
   gameImage: {
     width: "100%",
     height: "180px",
     borderRadius: "12px",
     objectFit: "cover" as const,
-    marginBottom: "16px",
-    backgroundColor: "#f3f4f6"
+    marginBottom: "12px"
   },
   gameIcon: {
-    width: "100%",
     height: "180px",
     borderRadius: "12px",
-    background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+    background: "#667eea",
+    color: "#fff",
+    fontSize: "64px",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    fontSize: "64px",
-    marginBottom: "16px"
+    marginBottom: "12px"
   },
   gameName: {
     fontSize: "18px",
     fontWeight: "700",
-    color: "#1f2937",
-    marginBottom: "16px",
-    wordBreak: "break-word" as const
+    marginBottom: "12px"
   },
   buttonGroup: {
     display: "flex",
     gap: "10px"
   },
   editButton: {
-    flex: "1",
-    padding: "10px 16px",
+    flex: 1,
     backgroundColor: "#3b82f6",
     color: "#fff",
     border: "none",
     borderRadius: "10px",
-    cursor: "pointer",
-    fontWeight: "600",
-    fontSize: "14px",
-    transition: "all 0.2s"
+    padding: "10px",
+    cursor: "pointer"
   },
   deleteButton: {
-    flex: "1",
-    padding: "10px 16px",
+    flex: 1,
     backgroundColor: "#ef4444",
     color: "#fff",
     border: "none",
     borderRadius: "10px",
-    cursor: "pointer",
-    fontWeight: "600",
-    fontSize: "14px",
-    transition: "all 0.2s"
+    padding: "10px",
+    cursor: "pointer"
   }
 };
 
@@ -199,7 +148,6 @@ export default function Dashboard() {
   const [games, setGames] = useState<any[]>([]);
   const [name, setName] = useState("");
   const [editId, setEditId] = useState<number | null>(null);
-  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [userEmail, setUserEmail] = useState("");
 
@@ -219,28 +167,17 @@ export default function Dashboard() {
   }, []);
 
   const fetchGames = async () => {
-    try {
-      const res = await fetch(`${API_URL}/games`);
-      const data = await res.json();
-      setGames(data);
-    } catch (error) {
-      console.error("Error fetching games:", error);
-    }
+    const res = await fetch(`${API_URL}/games`);
+    const data = await res.json();
+    setGames(data);
   };
 
-  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleImageChange = (e: any) => {
     const file = e.target.files?.[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setSelectedImage(reader.result as string);
-      };
-      reader.readAsDataURL(file);
-    }
-  };
-
-  const removeImage = () => {
-    setSelectedImage(null);
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onloadend = () => setSelectedImage(reader.result as string);
+    reader.readAsDataURL(file);
   };
 
   const addOrUpdateGame = async () => {
@@ -278,15 +215,69 @@ export default function Dashboard() {
   };
 
   const handleLogout = () => {
-    localStorage.removeItem("authToken");
-    localStorage.removeItem("userEmail");
+    localStorage.clear();
     router.push("/");
   };
 
   return (
     <div style={styles.wrapper}>
       <div style={styles.container}>
-        {/* UI remains exactly same */}
+        <div style={styles.headerWrapper}>
+          <div>
+            <h1 style={styles.title}>🎮 Game Dashboard</h1>
+            <p style={styles.subtitle}>Welcome, {userEmail}</p>
+          </div>
+          <button style={styles.logoutButton} onClick={handleLogout}>
+            Logout
+          </button>
+        </div>
+
+        <div style={styles.inputSection}>
+          <div style={styles.inputWrapper}>
+            <input
+              style={styles.input}
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              placeholder="Enter game name"
+            />
+            <button style={styles.addButton} onClick={addOrUpdateGame}>
+              {editId ? "Update" : "Add"}
+            </button>
+          </div>
+
+          <div style={styles.imageUploadWrapper}>
+            <input type="file" onChange={handleImageChange} style={styles.fileInput} />
+            {selectedImage && (
+              <>
+                <img src={selectedImage} style={styles.imagePreview} />
+                <button style={styles.removeImageButton} onClick={() => setSelectedImage(null)}>
+                  Remove
+                </button>
+              </>
+            )}
+          </div>
+        </div>
+
+        <div style={styles.gamesGrid}>
+          {games.map((game) => (
+            <div key={game.id} style={styles.gameCard}>
+              {game.image ? (
+                <img src={game.image} style={styles.gameImage} />
+              ) : (
+                <div style={styles.gameIcon}>🎮</div>
+              )}
+              <h3 style={styles.gameName}>{game.name}</h3>
+              <div style={styles.buttonGroup}>
+                <button style={styles.editButton} onClick={() => editGame(game)}>
+                  Edit
+                </button>
+                <button style={styles.deleteButton} onClick={() => deleteGame(game.id)}>
+                  Delete
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
