@@ -2,6 +2,8 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
+const API_URL = process.env.NEXT_PUBLIC_API_URL!;
+
 const styles = {
   wrapper: {
     minHeight: "100vh",
@@ -60,7 +62,6 @@ const styles = {
     border: "2px solid #e5e7eb",
     fontSize: "15px",
     outline: "none",
-    transition: "all 0.2s",
     fontWeight: "500"
   },
   button: {
@@ -72,9 +73,7 @@ const styles = {
     color: "#fff",
     fontWeight: "700",
     fontSize: "16px",
-    transition: "all 0.3s",
-    boxShadow: "0 4px 12px rgba(102, 126, 234, 0.4)",
-    marginTop: "10px"
+    boxShadow: "0 4px 12px rgba(102, 126, 234, 0.4)"
   },
   error: {
     backgroundColor: "#fee2e2",
@@ -84,20 +83,6 @@ const styles = {
     fontSize: "14px",
     fontWeight: "500",
     border: "2px solid #fecaca"
-  },
-  demoInfo: {
-    marginTop: "20px",
-    padding: "16px",
-    backgroundColor: "#f3f4f6",
-    borderRadius: "12px",
-    fontSize: "13px",
-    color: "#4b5563",
-    textAlign: "center" as const
-  },
-  demoCredentials: {
-    fontWeight: "700",
-    color: "#1f2937",
-    marginTop: "8px"
   }
 };
 
@@ -114,7 +99,7 @@ export default function LoginPage() {
     setLoading(true);
 
     try {
-      const response = await fetch("http://localhost:5000/login", {
+      const response = await fetch(`${API_URL}/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password })
@@ -123,17 +108,14 @@ export default function LoginPage() {
       const data = await response.json();
 
       if (data.success) {
-        // Store token in localStorage
         localStorage.setItem("authToken", data.token);
         localStorage.setItem("userEmail", email);
-        
-        // Redirect to dashboard
         router.push("/dashboard");
       } else {
         setError(data.message || "Login failed");
       }
     } catch (err) {
-      setError("Cannot connect to server. Make sure backend is running.");
+      setError("Unable to connect. Please try again later.");
     } finally {
       setLoading(false);
     }
@@ -156,7 +138,6 @@ export default function LoginPage() {
               style={styles.input}
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="Enter your email"
               required
             />
           </div>
@@ -168,27 +149,16 @@ export default function LoginPage() {
               style={styles.input}
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              placeholder="Enter your password"
               required
             />
           </div>
 
           {error && <div style={styles.error}>{error}</div>}
 
-          <button
-            type="submit"
-            style={{
-              ...styles.button,
-              opacity: loading ? "0.7" : "1",
-              cursor: loading ? "not-allowed" : "pointer"
-            }}
-            disabled={loading}
-          >
+          <button type="submit" style={styles.button} disabled={loading}>
             {loading ? "Logging in..." : "Login"}
           </button>
         </form>
-
-        
       </div>
     </div>
   );
