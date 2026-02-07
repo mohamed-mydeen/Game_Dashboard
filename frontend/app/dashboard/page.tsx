@@ -50,7 +50,7 @@ const styles = {
     display: "flex",
     gap: "12px",
     marginBottom: "16px",
-    backgroundColor: "#c2699e",
+    
 
   },
   input: {
