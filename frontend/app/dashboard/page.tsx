@@ -26,7 +26,7 @@ const styles = {
   title: {
     fontSize: "42px",
     fontWeight: "800",
-    color: "#fff"
+    color:"#080808"
   },
   subtitle: {
     fontSize: "16px",
@@ -40,7 +40,7 @@ const styles = {
     fontWeight: "700"
   },
   inputSection: {
-    backgroundColor: "#fff",
+    backgroundColor: "#c097c1",
     padding: "24px",
     borderRadius: "16px",
     marginBottom: "30px",
@@ -49,13 +49,17 @@ const styles = {
   inputWrapper: {
     display: "flex",
     gap: "12px",
-    marginBottom: "16px"
+    marginBottom: "16px",
+    backgroundColor: "#c2699e",
+
   },
   input: {
     flex: 1,
     padding: "14px",
     borderRadius: "12px",
-    border: "2px solid #080808"
+    border: "2px solid #080808",
+    color:"#080808"
+
   },
   addButton: {
     padding: "14px 28px",
@@ -120,7 +124,8 @@ const styles = {
   gameName: {
     fontSize: "18px",
     fontWeight: "700",
-    marginBottom: "12px"
+    marginBottom: "12px",
+    color:"#080808"
   },
   buttonGroup: {
     display: "flex",
