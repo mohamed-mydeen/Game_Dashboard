@@ -43,7 +43,8 @@ const styles = {
     backgroundColor: "#fff",
     padding: "24px",
     borderRadius: "16px",
-    marginBottom: "30px"
+    marginBottom: "30px",
+    color:"#080808"
   },
   inputWrapper: {
     display: "flex",
@@ -54,7 +55,7 @@ const styles = {
     flex: 1,
     padding: "14px",
     borderRadius: "12px",
-    border: "2px solid #e5e7eb"
+    border: "2px solid #080808"
   },
   addButton: {
     padding: "14px 28px",
@@ -68,7 +69,8 @@ const styles = {
   imageUploadWrapper: {
     display: "flex",
     gap: "12px",
-    alignItems: "center"
+    alignItems: "center",
+    color:"#080808"
   },
   fileInput: {
     flex: 1
