@@ -133,7 +133,7 @@ export default function LoginPage() {
         setError(data.message || "Login failed");
       }
     } catch (err) {
-      setError("Cannot connect to server. Make sure backend is running on port 5000.");
+      setError("Cannot connect to server. Make sure backend is running.");
     } finally {
       setLoading(false);
     }
@@ -143,7 +143,7 @@ export default function LoginPage() {
     <div style={styles.wrapper}>
       <div style={styles.loginBox}>
         <div style={styles.header}>
-          <div style={styles.icon}></div>
+          <div style={styles.icon}>🎮</div>
           <h1 style={styles.title}>Game Dashboard</h1>
           <p style={styles.subtitle}>Login to manage your games</p>
         </div>
@@ -188,10 +188,7 @@ export default function LoginPage() {
           </button>
         </form>
 
-        <div style={styles.demoInfo}>
-          
-          
-        </div>
+        
       </div>
     </div>
   );
